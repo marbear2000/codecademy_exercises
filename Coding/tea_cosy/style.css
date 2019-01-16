@@ -1,0 +1,159 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 22px;
+  color: seashell;
+  background-color: #000000;
+  opacity: 0.9;
+  text-align: center;
+
+}
+
+
+
+.header {
+  height: 70px;
+}
+/* nav bar style */
+
+.navbar {
+  height: auto;
+  width: 100%;
+  text-decoration: underline;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  position: fixed;
+  background-color: #000000;
+  border-bottom: 1px solid seashell;
+}
+
+.navbar ul {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.navbar li {
+  display: inline-block;
+  text-decoration: underline;
+  padding: 0px 20px 20px 0px;
+
+}
+
+#logo {
+  height: 50px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+/* mission section */
+#wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container-mission {
+  height: 700px;
+  /*margin: 0px 50px 50px 50px;*/
+  background-image: url("images/mission-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mission {
+  width: 100%;
+  background-color: #000000;
+}
+
+/*tea images*/
+.container-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cards {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.tea-images {
+  height: 200px;
+  width: 300px;
+}
+
+/* locations */
+.location {
+  height: 500px;
+  background-image: url("images/locations-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.container-location {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cards-location {
+  margin-top: 15px;
+  padding: 10px 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  opacity: 0.9;
+  background-color: #000;
+  max-width: 300px;
+  flex-grow: 1;
+}
+
+.copyright {
+  text-align: left;
+  font-size: 16px;
+ }
+
+
+/* media queries */
+@media only screen and (max-width: 1024px) {
+  .container-month {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .container-month {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .container-month {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-location {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+  }
+}
+
+
+

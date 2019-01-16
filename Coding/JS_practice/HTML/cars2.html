@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cars</title>
+</head>
+
+<body>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+  <script type="text/javascript">
+    function Car (x, y) {
+      this.x = x;
+      this.y = y;
+      this.draw()
+    };
+
+    Car.prototype.draw = function () {
+      let carHtml = '<img src="https://nostarch.com/images/car.png">';
+
+
+      this.carElement = $(carHtml);
+
+      this.carElement.css({
+        position: 'absolute',
+        left: this.x,
+        top: this.y
+      });
+
+      $("body").append(this.carElement);
+    };
+
+    Car.prototype.moveRight = function (distance) {
+      this.x += distance;
+
+      this.carElement.css ({
+        left: this.x,
+        top: this.y
+      });
+    };
+
+    Car.prototype.moveLeft = function (distance) {
+      this.x -= distance;
+
+      this.carElement.css ({
+        left: this.x,
+        top: this.y
+      });
+    };
+
+    Car.prototype.moveUp = function (distance) {
+      this.y -= distance;
+
+      this.carElement.css ({
+        left: this.x,
+        top: this.y
+      });
+    };
+
+    Car.prototype.moveDown = function (distance) {
+      this.y += distance;
+
+      this.carElement.css ({
+        left: this.x,
+        top: this.y
+      });
+    };
+
+
+    let tesla = new Car(20, 20);
+    let nissan = new Car(100, 200);
+
+
+    setInterval(function () {
+      tesla.moveRight(Math.random() * 5);
+      nissan.moveRight(Math.random() * 5);
+
+    }, 30);
+
+    // tesla.draw();
+    // nissan.draw();
+    // volswagen.draw();
+
+    // tesla.moveRight(100);
+    // // nissan.moveRight();
+
+    // tesla.moveLeft();
+    // // nissan.moveLeft();
+
+    // tesla.moveUp();
+    // // nissan.moveUp();
+
+    // tesla.moveDown();
+    // nissan.moveDown();
+
+    // let offset = 0;
+    // function moveNissan () {
+    //   $("img").offset({ top: offset});
+
+    //   offset++;
+    //   if (offset > 200){
+    //     offset = 0;
+    //   }
+    // };
+
+    // // nissan = setInterval(moveNissan, 30)
+
+    // nissan.moveRight(moveNissan, 30);
+
+  </script>
+
+</body>
+</html>
+
+
+
+

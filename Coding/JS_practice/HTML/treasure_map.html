@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find the buried treasure!</title>
+</head>
+
+<body>
+    <h1 id="heading">Find the buried treasure!</h1>
+
+    <img id="map" width=400 height=400 src="https://nostarch.com/images/treasuremap.png">
+
+    <p id="distance"></p>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <script>
+      // get random number from 0 to size
+      function getRandomNumber (size) {
+        return Math.floor(Math.random() * size)
+      }
+
+      // calculate the distance between click event and target
+      function getDistance (event, target) {
+        let diffX = event.offsetX - target.x;
+        let diffY = event.offsetY - target.y;
+        return Math.sqrt((diffX * diffX) + (diffY * diffY));
+      }
+
+      // get a string representing the distance
+        function getDistanceHint (distance) {
+          if (distance < 10) {
+            return "Boiling hot!";
+          } else if (distance < 20) {
+            return "Really hot!";
+          } else if (distance < 40) {
+            return "Hot!";
+          } else if (distance < 80) {
+            return "Warm!";
+          } else if (distance < 120) {
+            return "Lukewarm";
+          } else if (distance < 160) {
+            return "Cold";
+          } else if (distance < 320) {
+            return "Really cold";
+          } else {
+            return "Freezing"
+          }
+        }
+
+      // set up our variables
+      let width = 400;
+      let height = 400;
+      let clicks = 0;
+      let limitGuess = 10;
+
+      // create a random target location
+      let target = {
+        x: getRandomNumber(width),
+        y: getRandomNumber(height)
+      }
+
+      // add a click handler to the img element
+      $("#map").click(function (event) {
+        clicks++;
+        if (clicks > limitGuess) {
+        alert("GAME OVER");
+        return;
+      }
+
+      // get distance between click event and target
+      let distance = getDistance(event, target);
+
+      // convert distance to a hint
+
+      let distanceHint = getDistanceHint(distance);
+
+      // update the #distance element with new hint
+      $("#distance").text(distanceHint);
+
+      // Update the #clicks-remaining element with the number of clicks remaining
+      $("#clicks-remaining").text(clickLimit - clicks);
+
+      // if the click was close enough, tell them they have won
+      if (distance < 8) {
+        alert(`You have found the treasure in ${clicks} clicks`)
+      }
+    });
+    </script>
+</body>
+</html>
+

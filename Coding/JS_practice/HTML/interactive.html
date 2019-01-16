@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Programming</title>
+</head>
+<body>
+  <h1 id="heading">Hello World!</h1>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+  <script type="text/javascript">
+    let leftOffSet = 100;
+
+    function moveHeading () {
+      $("#heading").offset({ left: leftOffSet });
+
+      leftOffSet++;
+
+      if (leftOffSet > 600) {
+        leftOffSet = 200;
+      }
+    };
+
+    setInterval(moveHeading, 10)
+
+  </script>
+
+</body>
+</html>
+

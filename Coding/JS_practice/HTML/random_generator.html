@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Functions</title>
+</head>
+<body>
+  <h1>Function</h1>
+  <script type="text/javascript">
+    let pickRandomWord = function (words) {
+      return words[Math.floor(Math.random() * words.length)];
+    };
+
+    generateRandonInsult = function () {
+    let randomBodyParts = ['Ass', 'Nose', 'Toes' ];
+    let randomAdjectives = ['Smelly', 'Boring', 'Stupid'];
+    let randomWords = ['Marmot', 'Stick', 'Monkey', 'Rat'];
+
+
+    let randomString = `Your ${pickRandomWord(randomBodyParts)} is like a ${pickRandomWord(randomAdjectives)} ${pickRandomWord(randomWords)}`;
+
+    return randomString;
+  };
+
+  console.log(generateRandonInsult());
+  </script>
+
+</body>
+</html>
+

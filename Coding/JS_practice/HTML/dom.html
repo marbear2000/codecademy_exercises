@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The DOM</title>
+</head>
+<body>
+  <h1 id="main-heading">Hello World!</h1>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  <script type="text/javascript">
+    let counter = 10;
+
+
+      function printMessage () {
+        console.log(`I have been learning JS for ${counter} hours`);
+        counter--;
+      }
+      let intervalId = setInterval(printMessage, 2000);
+
+  </script>
+
+</body>
+</html>
